@@ -22,7 +22,7 @@ if(tb){
   var applyTheme=function(t){
     tb.textContent=(t==="dark")?"日间":"夜间";
     var m=$('meta[name="theme-color"]');
-    if(m)m.content=(t==="dark")?"#191815":"#FAF8F2";
+    if(m)m.content=(t==="dark")?"#131217":"#F6F4EF";
   };
   applyTheme(d.documentElement.dataset.theme||"light");
   tb.addEventListener("click",function(){
