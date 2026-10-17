@@ -822,3 +822,16 @@ if(fc){
   if(fi)fi.href="https://www.inoreader.com/?add_feed="+encodeURIComponent(feedUrl());
   if(ff)ff.href="https://feedly.com/i/subscription/feed/"+encodeURIComponent(feedUrl());
 }
+
+/* ---------- 回到顶部（仅文章页） ---------- */
+(function(){
+  try{
+    if(document.body.getAttribute("data-page")!=="article")return;
+    var b=document.createElement("button");
+    b.type="button";b.className="to-top";b.setAttribute("aria-label","回到顶部");b.textContent="↑";b.hidden=true;
+    b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});
+    document.body.appendChild(b);
+    var on=function(){b.hidden=window.scrollY<900;};
+    window.addEventListener("scroll",on,{passive:true});on();
+  }catch(e){}
+})();

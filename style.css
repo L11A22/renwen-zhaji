@@ -518,3 +518,9 @@ details.toc-m a .no{color:var(--seal);margin-right:.5em}
 .sw-bar button{flex:0 0 auto;padding:7px 14px;border-radius:999px;border:1px solid var(--seal);background:var(--seal);color:#FAF8F2;font-size:12.5px;letter-spacing:.06em;cursor:pointer}
 .sw-bar button:active{transform:translateY(1px)}
 @media print{.sw-bar{display:none}}
+
+/* 回到顶部 */
+.to-top{position:fixed;right:16px;bottom:78px;z-index:90;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:18px;line-height:1;box-shadow:0 8px 24px rgba(0,0,0,.12);cursor:pointer}
+.to-top[hidden]{display:none}
+.to-top:active{transform:translateY(1px)}
+@media print{.to-top{display:none}}
