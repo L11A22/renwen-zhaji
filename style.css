@@ -512,3 +512,9 @@ details.toc-m a .no{color:var(--seal);margin-right:.5em}
 
 .chip-cross{background:transparent;border:1px dashed color-mix(in srgb,var(--indigo) 45%,transparent);color:var(--soft);font-weight:500}
 .chip-cross:hover{border-style:solid}
+
+/* PWA 更新提示条 */
+.sw-bar{position:fixed;left:14px;right:14px;bottom:14px;z-index:95;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 34px rgba(0,0,0,.16);font-family:var(--sans);font-size:13px;color:var(--ink)}
+.sw-bar button{flex:0 0 auto;padding:7px 14px;border-radius:999px;border:1px solid var(--seal);background:var(--seal);color:#FAF8F2;font-size:12.5px;letter-spacing:.06em;cursor:pointer}
+.sw-bar button:active{transform:translateY(1px)}
+@media print{.sw-bar{display:none}}

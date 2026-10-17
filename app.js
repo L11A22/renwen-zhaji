@@ -798,7 +798,17 @@ if(subForm){
 try{
   if("serviceWorker" in navigator && location.protocol==="https:"){
     var swPath=location.pathname.indexOf("/article/")>=0?"../sw.js":"sw.js";
-    navigator.serviceWorker.register(swPath).catch(function(){});
+    navigator.serviceWorker.register(swPath).then(function(){
+          navigator.serviceWorker.addEventListener("controllerchange",function(){
+            if(!navigator.serviceWorker.controller)return;
+            if(document.getElementById("sw-bar"))return;
+            var bar=document.createElement("div");
+            bar.id="sw-bar";bar.className="sw-bar";
+            bar.innerHTML='<span>本站已更新</span><button type="button">刷新查看</button>';
+            bar.querySelector("button").addEventListener("click",function(){location.reload();});
+            document.body.appendChild(bar);
+          });
+        }).catch(function(){});
   }
 }catch(e){}
 
